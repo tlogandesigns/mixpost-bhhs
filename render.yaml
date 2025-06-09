@@ -5,4 +5,4 @@ services:
     plan: free
     autoDeploy: true
     dockerContext: .
-    dockerComposePath: docker-compose.yml
+    dockerComposePath: docker-compose.yaml
