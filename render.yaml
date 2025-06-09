@@ -4,8 +4,6 @@ services:
     env: docker
     plan: free
     autoDeploy: true
-    buildCommand: "" # Optional
-    startCommand: "" # Optional
     dockerContext: .
     envVars:
       - fromGroup: mixpost-env
@@ -15,7 +13,6 @@ services:
     env: docker
     plan: free
     dockerContext: .
-    startCommand: "" # Optional
     envVars:
       - key: MYSQL_DATABASE
         value: mixpost-35303936d15c
