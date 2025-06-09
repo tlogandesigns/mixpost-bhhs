@@ -1,7 +1,10 @@
+infrastructureVersion: 2
+
 services:
   - type: web
     name: mixpost
     env: docker
     plan: free
     autoDeploy: true
-    dockerContext: .
+    buildCommand: ""  # Optional: avoids default assumption
+    startCommand: ""  # Optional: handled by mixpost image
