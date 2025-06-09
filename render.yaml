@@ -4,5 +4,29 @@ services:
     env: docker
     plan: free
     autoDeploy: true
-    buildCommand: ""  # Optional: avoids default assumption
-    startCommand: ""  # Optional: handled by mixpost image
+    buildCommand: "" # Optional
+    startCommand: "" # Optional
+    dockerContext: .
+    envVars:
+      - fromGroup: mixpost-env
+
+  - type: pserv
+    name: mysql
+    env: docker
+    plan: free
+    dockerContext: .
+    startCommand: "" # Optional
+    envVars:
+      - key: MYSQL_DATABASE
+        value: mixpost-35303936d15c
+      - key: MYSQL_USER
+        value: mixpost-35303936d15c
+      - key: MYSQL_PASSWORD
+        value: ijddo1q68
+
+  - type: pserv
+    name: redis
+    env: docker
+    plan: free
+    dockerContext: .
+    startCommand: redis-server --appendonly yes --replica-read-only no
