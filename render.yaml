@@ -26,4 +26,3 @@ services:
     env: docker
     plan: free
     dockerContext: .
-    startCommand: redis-server --appendonly yes --replica-read-only no
