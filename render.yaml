@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: mixpost
+    env: docker
+    plan: free
+    autoDeploy: true
+    dockerContext: .
+    dockerComposePath: docker-compose.yml
